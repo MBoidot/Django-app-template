@@ -1,0 +1,207 @@
+{% extends 'home/base.html' %}
+<title>{% block title %} Homepage {% endblock %}</title>
+{% block header %}
+{% load static %}
+
+<section class="banner half">
+		<article>
+			<img src="{% static 'images/single_grey_caps.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Home of Caps</p>
+					<h2>Welcome</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/totem_drawing.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Push your game further with</p>
+					<h2><a href="{% url 'shop:shop_index' %}">Totems add-ons</a></h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/slide03.jpg' %}"  alt="" />
+			<div class="inner">
+				<header>
+					<p>Collect exclusive Caps series</p>
+					<h2><a href="{% url 'shop:shop_index' %}">Get them all !</a></h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/slide04.jpg' %}"  alt="" />
+			<div class="inner">
+				<header>
+					<p>Extend the game :</p>
+					<h2><a href="{% url 'rulz:rulz_home' %}">Share your rules</a></h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/trophy_collection.jpg' %}"  alt="" />
+			<div class="inner">
+				<header>
+					<p>Become the best capser</p>
+					<h2>Of all time !</h2>
+				</header>
+			</div>
+		</article>
+	</section>
+
+{% endblock %}  <!--end of header block-->
+
+
+{% block body %}
+
+{% load staticfiles %}
+
+		<!-- One -->
+
+		<section id="one" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Hot stuff</h2>
+							</header>
+							<a href="{% url 'home:register' %}" class="button alt">register</a>
+
+							<footer class="align-center">
+								<h2>make it banner style</h2>
+							</footer>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		{% if user.is_authenticated %}
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="content">
+								<header class="align-center">
+									<h2>Member section</h2>
+								</header>
+								<p>You are logged in, cool stuff here</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		{% else %} 
+
+
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="content">
+								<header class="align-center">
+									<h2>come create account stuff</h2>
+								</header>
+								<p>General stuff here</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+	  	{% endif %} 
+
+
+
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div class="gallery">
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{% static 'images/pic02.jpg' %}" alt="" />
+								</div>
+
+								<div class="content">
+									<header class="align-center">
+										<p>You make the rules</p>
+										<h2>You make the game</h2>
+									</header>
+									<p>Create your own to make the game more fun</p>
+									<footer class="align-center">
+										<a href="{% url 'rulz:rulz_home' %}" class="button alt">Go find rules</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{% static 'images/pic03.jpg' %}" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p>Customized caps and printable totems</p>
+										<h2>Make the game your own</h2>
+									</header>
+									<p>Discover</p>
+									<footer class="align-center">
+										<a href="{% url 'shop:shop_index' %}" class="button alt">Shop</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+						<!--<section id="two" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
+						<h2>Latest news</h2>
+					</header>
+				</div>
+			</section>
+
+
+			<section id="three" class="wrapper style1">
+				<div class="inner">
+					<header class="align-center">
+						<p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
+						<h2>Member section</h2>
+					</header>
+					<div class="gallery">
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'images/pic02.jpg' %}" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'images/pic03.jpg' %}" alt="" /></a>
+							</div>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'images/pic04.jpg' %}" alt="" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>-->
+
+
+{% endblock %}
+
